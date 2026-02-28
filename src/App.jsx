@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import CitySelect from './pages/CitySelect'
 import CityDetail from './pages/CityDetail'
 import Food from './pages/Food'
-import Itinerary from './pages/Itinerary'
+// import Itinerary from './pages/Itinerary'
 import MapPage from './pages/MapPage'
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/cities" element={<CitySelect />} />
         <Route path="/cities/:city" element={<CityDetail />} />
         <Route path="/food" element={<Food />} />
-        <Route path="/itinerary" element={<Itinerary />} />
+        {/* <Route path="/itinerary" element={<Itinerary />} /> */}
         <Route path="/map" element={<MapPage />} />
       </Routes>
       <Footer />

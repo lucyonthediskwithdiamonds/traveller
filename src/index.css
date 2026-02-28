@@ -777,7 +777,10 @@ h3 { font-size: 24px; margin-bottom: 16px; }
 @media (max-width: 768px) {
   h1 { font-size: 36px; }
   h2 { font-size: 28px; }
-  .hero-content h1 { font-size: 42px; }
+  .hero { min-height: auto; padding: 30px 20px; }
+  .hero-content h1 { font-size: 32px; margin-bottom: 12px; }
+  .hero-content .subtitle { font-size: 16px; }
+  .hero-content .dates { font-size: 14px; }
   .nav-links { gap: 14px; font-size: 13px; }
   .city-grid { grid-template-columns: 1fr; }
   .map-container { height: 400px; }

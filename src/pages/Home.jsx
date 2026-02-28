@@ -18,8 +18,8 @@ export default function Home() {
             ✿ Simon & Monize ✿
           </div>
           <h1>Japan Trip 2026</h1>
-          <p className="dates">{TRIP.dates}</p>
-          <p className="subtitle" style={{marginTop: 12}}>{TRIP.duration} · {TRIP.route.split(' → ').length} cities</p>
+          {/* <p className="dates">{TRIP.dates}</p> */}
+          {/* <p className="subtitle" style={{marginTop: 12}}>{TRIP.duration} · {TRIP.route.split(' → ').length} cities</p> */}
           <p className="route-text">{TRIP.route}</p>
 
           <div className="stat-pills">
