@@ -52,7 +52,7 @@ export default function Home() {
                 <div className="city-card-body">
                   <span className="city-card-emoji">{city.emoji}</span>
                   <div className="city-card-name">{city.name}</div>
-                  <div className="city-card-dates">{city.dates}</div>
+                  <div className="city-card-dates">{city.desc.split('.')[0]}</div>
                   <div className="city-card-desc">{city.desc}</div>
                 </div>
               </Link>
@@ -84,13 +84,13 @@ export default function Home() {
       <div className="section">
         <div className="container">
           <div className="section-header">
-            <h2>Plan Your Days</h2>
-            <p>Everything organised for the perfect trip</p>
+            <h2>Plan Your Trip</h2>
+            <p>Everything organised for the perfect adventure</p>
           </div>
           <div className="grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))'}}>
             {[
-              {label: '🗓️ Day-by-Day Itinerary', desc: 'All 24 days planned', to: '/itinerary'},
               {label: '🍜 Food & Restaurants', desc: '40+ curated picks by city', to: '/food'},
+              {label: '🛍️ Shopping Guide', desc: 'Knives, watches, denim & vintage', to: '/shopping'},
               {label: '🏙️ All Cities', desc: 'Highlights, hotels & tips', to: '/cities'},
             ].map(link => (
               <Link key={link.to} to={link.to} style={{textDecoration: 'none'}}>

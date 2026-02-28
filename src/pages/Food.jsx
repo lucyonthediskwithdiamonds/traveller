@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { RESTAURANTS, CITIES } from '../data/tripData'
+import { mapsUrl } from '../utils/maps'
 
 export default function Food() {
   const [activeCity, setActiveCity] = useState('tokyo')
@@ -41,7 +42,6 @@ export default function Food() {
               <span style={{fontSize: 44}}>{city.emoji}</span>
               <div>
                 <h2 style={{marginBottom: 4}}>{city.name}</h2>
-                <p style={{color: '#9a7a8a', fontSize: 14}}>{city.dates}</p>
               </div>
             </div>
           )}
@@ -68,15 +68,17 @@ export default function Food() {
                         ⭐ {r.rating.includes('Bib') ? '🔴 ' + r.rating : r.rating}
                       </span>
                     )}
-                    {r.day && (
-                      <span style={{fontSize: 12, color: '#baa0a8'}}>{r.day}</span>
-                    )}
                   </div>
                   {r.notes && (
-                    <p style={{fontSize: 13, color: '#7a6a74', fontStyle: 'italic', marginTop: 6, marginBottom: 0}}>
+                    <p style={{fontSize: 13, color: '#7a6a74', fontStyle: 'italic', marginTop: 6, marginBottom: 6}}>
                       💬 {r.notes}
                     </p>
                   )}
+                  <a href={mapsUrl(`${r.name} ${r.area || ''}`, city?.name || activeCity)}
+                     target="_blank" rel="noopener noreferrer"
+                     style={{display: 'inline-block', marginTop: 4, fontSize: 12, color: '#d4558f', textDecoration: 'none', fontWeight: 500}}>
+                    📍 View on Maps
+                  </a>
                 </div>
               ))}
             </div>

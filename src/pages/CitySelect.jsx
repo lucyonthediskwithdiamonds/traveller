@@ -7,7 +7,7 @@ export default function CitySelect() {
       <div className="container">
         <div style={{textAlign: 'center', marginBottom: 56}}>
           <h1 style={{marginBottom: 12}}>Choose Your City</h1>
-          <p style={{fontSize: 17, color: '#7a5060'}}>{TRIP.dates} · {TRIP.travelers}</p>
+          <p style={{fontSize: 17, color: '#7a5060'}}>{TRIP.travelers}</p>
         </div>
 
         <div className="city-grid">
@@ -18,7 +18,7 @@ export default function CitySelect() {
               <div className="city-card-body">
                 <span className="city-card-emoji">{city.emoji}</span>
                 <div className="city-card-name">{city.name}</div>
-                <div className="city-card-dates">{city.dates} · {city.hotel.split('/')[0].trim()}</div>
+                <div className="city-card-dates">{city.hotel.split('/')[0].trim()}</div>
                 <div className="city-card-desc">{city.desc}</div>
               </div>
             </Link>

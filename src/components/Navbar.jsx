@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom'
 const LINKS = [
   { to: '/', label: 'Home' },
   { to: '/cities', label: 'Cities' },
-  { to: '/itinerary', label: 'Itinerary' },
   { to: '/food', label: 'Food' },
+  { to: '/shopping', label: 'Shopping' },
   { to: '/map', label: 'Map' },
 ]
 

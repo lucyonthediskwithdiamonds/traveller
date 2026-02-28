@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { CITIES } from '../data/tripData'
+import { mapsUrl } from '../utils/maps'
 
 export default function CityDetail() {
   const { city: cityId } = useParams()
@@ -30,7 +31,7 @@ export default function CityDetail() {
         <div className="city-hero-overlay" />
         <div className="city-hero-content" style={{width: '100%'}}>
           <h1>{city.emoji} {city.name}</h1>
-          <p className="city-meta">{city.dates} · {city.hotel}</p>
+          <p className="city-meta">{city.hotel}</p>
         </div>
       </div>
 
@@ -59,7 +60,13 @@ export default function CityDetail() {
               <div className="city-title">✨ Must-See Highlights</div>
               <ul className="highlight-list">
                 {city.highlights.map((h, i) => (
-                  <li key={i}>{h}</li>
+                  <li key={i} style={{display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 8}}>
+                    <span>{h}</span>
+                    <a href={mapsUrl(h, city.name)} target="_blank" rel="noopener noreferrer"
+                       style={{flexShrink: 0, fontSize: 12, color: '#d4558f', textDecoration: 'none', opacity: 0.8}}>
+                      📍 Maps
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>

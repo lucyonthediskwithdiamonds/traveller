@@ -8,6 +8,7 @@ import CityDetail from './pages/CityDetail'
 import Food from './pages/Food'
 // import Itinerary from './pages/Itinerary'
 import MapPage from './pages/MapPage'
+import Shopping from './pages/Shopping'
 
 export default function App() {
   return (
@@ -19,7 +20,7 @@ export default function App() {
         <Route path="/cities" element={<CitySelect />} />
         <Route path="/cities/:city" element={<CityDetail />} />
         <Route path="/food" element={<Food />} />
-        {/* <Route path="/itinerary" element={<Itinerary />} /> */}
+        <Route path="/shopping" element={<Shopping />} />
         <Route path="/map" element={<MapPage />} />
       </Routes>
       <Footer />
