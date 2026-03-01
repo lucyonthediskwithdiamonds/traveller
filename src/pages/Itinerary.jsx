@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ITINERARY, CITIES } from '../data/tripData'
+import { mapsUrl } from '../utils/maps'
 
 const cityColors = Object.fromEntries(CITIES.map(c => [c.name, c.color]))
 const cityEmojis = Object.fromEntries(CITIES.map(c => [c.name, c.emoji]))
@@ -76,7 +77,11 @@ export default function Itinerary() {
 
                   <div className="day-highlights">
                     {day.highlights.map((h, i) => (
-                      <span key={i} className="day-highlight">{h}</span>
+                      <a key={i} href={mapsUrl(h, day.city)} target="_blank" rel="noopener noreferrer"
+                         className="day-highlight" title={`Open ${h.split(/[—(]/)[0].trim()} in Google Maps`}
+                         style={{textDecoration: 'none', cursor: 'pointer'}}>
+                        {h} 📍
+                      </a>
                     ))}
                   </div>
                 </div>

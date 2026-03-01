@@ -1,3 +1,5 @@
+import { mapsUrl } from '../utils/maps'
+
 export default function Shops() {
   const vintage = {
     tokyo: [
@@ -49,6 +51,8 @@ export default function Shops() {
                   <p className="rating">⭐ {s.rating}</p>
                   <div className="tags"><span className="tag">{s.type}</span></div>
                   <p style={{marginTop: 12, fontSize: 14, color: '#6b5a4a'}}>{s.notes}</p>
+                  <a href={mapsUrl(s.name, 'Tokyo')} target="_blank" rel="noopener noreferrer"
+                     style={{display: 'inline-block', marginTop: 8, fontSize: 12, color: '#d4558f', textDecoration: 'none', fontWeight: 500}}>📍 Maps</a>
                 </div>
               ))}
             </div>
@@ -61,6 +65,8 @@ export default function Shops() {
                   <p className="rating">⭐ {s.rating}</p>
                   <div className="tags"><span className="tag">{s.type}</span></div>
                   <p style={{marginTop: 12, fontSize: 14, color: '#6b5a4a'}}>{s.notes}</p>
+                  <a href={mapsUrl(s.name, 'Osaka')} target="_blank" rel="noopener noreferrer"
+                     style={{display: 'inline-block', marginTop: 8, fontSize: 12, color: '#d4558f', textDecoration: 'none', fontWeight: 500}}>📍 Maps</a>
                 </div>
               ))}
             </div>
@@ -73,6 +79,8 @@ export default function Shops() {
                   <p className="rating">⭐ {s.rating}</p>
                   <div className="tags"><span className="tag">{s.type}</span></div>
                   <p style={{marginTop: 12, fontSize: 14, color: '#6b5a4a'}}>{s.notes}</p>
+                  <a href={mapsUrl(s.name, 'Kyoto')} target="_blank" rel="noopener noreferrer"
+                     style={{display: 'inline-block', marginTop: 8, fontSize: 12, color: '#d4558f', textDecoration: 'none', fontWeight: 500}}>📍 Maps</a>
                 </div>
               ))}
             </div>
