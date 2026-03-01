@@ -17,14 +17,15 @@ export default function Home() {
           <div style={{fontSize: 13, marginBottom: 20, color: '#d4558f', fontFamily: 'Noto Sans JP, sans-serif', letterSpacing: '0.18em', textTransform: 'uppercase', fontWeight: 500}}>
             ✿ Simon & Monize ✿
           </div>
-          <h1>Japan Trip 2026</h1>
+          {/* <h1>Japan Trip 2026</h1> */}
+          <h1>Japan Trip</h1>
           {/* <p className="dates">{TRIP.dates}</p> */}
           {/* <p className="subtitle" style={{marginTop: 12}}>{TRIP.duration} · {TRIP.route.split(' → ').length} cities</p> */}
           <p className="route-text">{TRIP.route}</p>
 
           <div className="stat-pills">
             <span className="stat-pill">🗺️ {TRIP.route.split(' → ').length} Cities</span>
-            <span className="stat-pill">🌸 Sakura Peak</span>
+            {/* <span className="stat-pill">🌸 Sakura Peak</span> */}
             <span className="stat-pill">🏨 Hotels + Ryokan</span>
             <span className="stat-pill">🍱 40+ Restaurants</span>
           </div>

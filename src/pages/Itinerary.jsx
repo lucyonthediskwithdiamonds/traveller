@@ -25,7 +25,7 @@ export default function Itinerary() {
         borderBottom: '1px solid rgba(212,85,143,0.15)',
       }}>
         <h1 style={{marginBottom: 12}}>24 Days in Japan</h1>
-        <p style={{color: '#7a5060', fontSize: 17, marginBottom: 28}}>March 12 – April 4, 2026 · Simon & Monize</p>
+        {/* <p style={{color: '#7a5060', fontSize: 17, marginBottom: 28}}>March 12 – April 4, 2026 · Simon & Monize</p> */}
 
         {/* City filter pills */}
         <div className="city-pill-nav">
