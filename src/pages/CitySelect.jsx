@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CITIES, TRIP } from '../data/tripData'
+import { CITIES, TRIP, TRIP_META } from '../config/activeTrip'
 
 export default function CitySelect() {
   return (
@@ -33,7 +33,7 @@ export default function CitySelect() {
           border: '1px solid rgba(212, 85, 143, 0.15)'
         }}>
           <p style={{color: '#6b4a5a', fontSize: 15}}>
-            🌸 Sakura peak &nbsp;·&nbsp; 🗻 Mt. Fuji views &nbsp;·&nbsp; ♨️ Onsen &amp; ryokan &nbsp;·&nbsp; 🐒 Snow monkeys &nbsp;·&nbsp; 🍜 40+ restaurants
+            {TRIP_META.citiesTagline}
           </p>
         </div>
       </div>

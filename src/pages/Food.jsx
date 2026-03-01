@@ -1,9 +1,16 @@
 import { useState } from 'react'
-import { RESTAURANTS, CITIES } from '../data/tripData'
+import { RESTAURANTS, CITIES } from '../config/activeTrip'
+import { useTripPlan } from '../context/TripPlanContext'
 import { mapsUrl } from '../utils/maps'
 
 export default function Food() {
-  const [activeCity, setActiveCity] = useState('tokyo')
+  const { plan } = useTripPlan()
+
+  const visibleCities = plan.built && plan.cities.length > 0
+    ? CITIES.filter(c => plan.cities.includes(c.id))
+    : CITIES
+
+  const [activeCity, setActiveCity] = useState(visibleCities[0]?.id || 'tokyo')
   const restaurants = RESTAURANTS[activeCity] || []
   const city = CITIES.find(c => c.id === activeCity)
 
@@ -25,7 +32,7 @@ export default function Food() {
         <div className="container">
           {/* City pill nav */}
           <div className="city-pill-nav">
-            {CITIES.map(c => (
+            {visibleCities.map(c => (
               <button
                 key={c.id}
                 className={`city-pill ${activeCity === c.id ? 'active' : ''}`}

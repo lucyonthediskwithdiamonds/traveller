@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { CITIES } from '../data/tripData'
+import { CITIES } from '../config/activeTrip'
 import { mapsUrl } from '../utils/maps'
 
 export default function CityDetail() {
@@ -19,7 +19,6 @@ export default function CityDetail() {
 
   const categories = [
     { name: 'Food & Restaurants', emoji: '🍜', path: '/food', desc: 'Restaurants, cafes, bars & street food' },
-    // { name: 'Day-by-Day Plan', emoji: '🗓️', path: '/itinerary', desc: 'Full 24-day itinerary' },
     { name: 'All Cities', emoji: '🗺️', path: '/cities', desc: 'Explore every city on the route' },
   ]
 
