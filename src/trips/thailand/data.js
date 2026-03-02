@@ -34,7 +34,7 @@ export const CITIES = [
     emoji: '🐘',
     hotel: 'Old City or Nimman (Nimmanhaemin Road area)',
     desc: 'Northern cultural capital — moated old city, 300+ temples, the best Thai cooking classes, and ethical elephant sanctuaries.',
-    image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1528459801416-a9e53a69a938?w=800&q=80',
     color: '#2d6a4f',
     highlights: [
       'Doi Suthep — golden temple above the city at 1,080m, panoramic views, 306 naga-lined steps',
@@ -59,7 +59,7 @@ export const CITIES = [
     emoji: '🌴',
     hotel: 'Kata Noi or Kamala for calm; Patong if you want nightlife',
     desc: 'Thailand\'s largest island — dramatic limestone karst coastline, emerald Andaman waters, and the gateway to Phang Nga Bay.',
-    image: 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80',
     color: '#2874a6',
     highlights: [
       'Phang Nga Bay — James Bond Island, sea caves and karst formations, best by kayak at dawn',
@@ -84,7 +84,7 @@ export const CITIES = [
     emoji: '🌺',
     hotel: 'Chaweng for buzz; Bophut (Fisherman\'s Village) for character',
     desc: 'Coconut palm island in the Gulf of Thailand — diverse beaches, luxury resorts, and a surprisingly charming Fisherman\'s Village.',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=800&q=80',
     color: '#e07b39',
     highlights: [
       'Ang Thong Marine National Park — day trip by boat, 42 islands, emerald lagoon, sea cave, snorkelling',
@@ -109,7 +109,7 @@ export const CITIES = [
     emoji: '🌿',
     hotel: 'Walking Street area or a riverside bungalow outside town',
     desc: 'Mountain valley retreat in northern Thailand — waterfalls, hot springs, rice fields, and a backpacker village with genuine charm.',
-    image: 'https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1554481922-76d29f87e1ef?w=800&q=80',
     color: '#8e44ad',
     highlights: [
       'Pai Canyon (Kong Lan) — narrow clay ridgelines above a forested gorge, spectacular at sunset',
@@ -134,7 +134,7 @@ export const CITIES = [
     emoji: '🏛️',
     hotel: 'Day trip from Bangkok (80 minutes by train) or stay one night',
     desc: 'Ancient capital of the Thai kingdom — Buddha heads entwined in Bodhi tree roots, colossal ruined chedis, and UNESCO heritage at every turn.',
-    image: 'https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80',
     color: '#8b4513',
     highlights: [
       'Wat Mahathat — the iconic Buddha head nestled in tree roots (please don\'t pose level with the face)',

@@ -12,6 +12,15 @@ const CATEGORIES = [
   { id: 'bakery',     label: 'Bakery' },
 ]
 
+// Infer Google Maps category from the place's type string
+function inferCategory(type = '') {
+  const t = type.toLowerCase()
+  if (t.includes('bar') || t.includes('pub') || t.includes('izakaya') || t.includes('negroni') || t.includes('wine bar') || t.includes('cocktail') || t.includes('nightlife') || t.includes('tasting')) return 'bar'
+  if (t.includes('boulangerie') || t.includes('bakery') || t.includes('patisserie') || t.includes('pasticceria') || t.includes('pastry shop') || t.includes('pastelaria')) return 'bakery'
+  if (t.includes('café') || t.includes('cafe') || t.includes('coffee') || t.includes('tea house') || t.includes('historic café')) return 'cafe'
+  return 'restaurant'
+}
+
 export default function Food() {
   const { plan } = useTripPlan()
   const { RESTAURANTS, CITIES } = useTripData()
@@ -30,7 +39,7 @@ export default function Food() {
   const allRestaurants = RESTAURANTS[activeCity] || []
   const restaurants = activeCategory === 'all'
     ? allRestaurants
-    : allRestaurants.filter(r => r.category === activeCategory)
+    : allRestaurants.filter(r => inferCategory(r.type) === activeCategory)
   const city = CITIES.find(c => c.id === activeCity)
 
   return (
@@ -44,7 +53,6 @@ export default function Food() {
       }}>
         <div style={{fontSize: 48, marginBottom: 12}}>🍜</div>
         <h1 style={{marginBottom: 10}}>Food & Drink</h1>
-        <p style={{color: '#7a5060', fontSize: 17}}>Curated picks across {CITIES.length} cities</p>
       </div>
 
       <div className="section">

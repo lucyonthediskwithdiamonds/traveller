@@ -6,7 +6,6 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CherryBlossoms from './components/CherryBlossoms'
 import Home from './pages/Home'
-import CitySelect from './pages/CitySelect'
 import CityDetail from './pages/CityDetail'
 import Food from './pages/Food'
 import Shopping from './pages/Shopping'
@@ -21,7 +20,7 @@ function RequiresPlan({ children }) {
 
 function ScrollToTop() {
   const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [pathname])
   return null
 }
 
@@ -31,18 +30,17 @@ function AppShell() {
     <>
       <ScrollToTop />
       {TRIP_META.cherryBlossoms && <CherryBlossoms count={20} />}
+      <Navbar />
       <Routes>
         <Route path="/" element={<TripBuilder />} />
         <Route path="/plan" element={<TripBuilder />} />
         <Route path="/guide" element={<RequiresPlan><Home /></RequiresPlan>} />
-        <Route path="/cities" element={<RequiresPlan><CitySelect /></RequiresPlan>} />
         <Route path="/cities/:city" element={<RequiresPlan><CityDetail /></RequiresPlan>} />
         <Route path="/food" element={<RequiresPlan><Food /></RequiresPlan>} />
         <Route path="/shopping" element={<RequiresPlan><Shopping /></RequiresPlan>} />
         <Route path="/phrases" element={<RequiresPlan><Phrases /></RequiresPlan>} />
       </Routes>
       <Footer />
-      <Navbar />
     </>
   )
 }

@@ -27,12 +27,6 @@ export default function Home() {
         <div className="hero-content">
           <h1>{TRIP_META.name} Trip</h1>
 
-          <div className="stat-pills">
-            <span className="stat-pill">🏙️ {CITIES.length} Cities</span>
-            <span className="stat-pill">🏨 Hotels + Stays</span>
-            <span className="stat-pill">🍽️ Restaurants</span>
-          </div>
-
           {/* Trip plan status */}
           {plan.built ? (
             <div style={{marginTop: 20, display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap'}}>
@@ -105,8 +99,7 @@ export default function Home() {
       <div className="section">
         <div className="container">
           <div className="section-header">
-            <h2>{plan.built && plan.cities.length > 0 ? 'Your Cities' : `${visibleCities.length} Cities to Explore`}</h2>
-            <p>Click any city to see highlights, restaurants, and tips</p>
+            <h2>{plan.built && plan.cities.length > 0 ? 'Your Cities' : 'Cities'}</h2>
           </div>
 
           <div className="city-grid">
@@ -123,13 +116,6 @@ export default function Home() {
             ))}
           </div>
 
-          {plan.built && plan.cities.length > 0 && plan.cities.length < CITIES.length && (
-            <div style={{textAlign: 'center', marginTop: 16}}>
-              <Link to="/cities" style={{fontSize: 14, color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 600}}>
-                View all {CITIES.length} cities →
-              </Link>
-            </div>
-          )}
         </div>
       </div>
 
@@ -163,7 +149,6 @@ export default function Home() {
             {[
               hasFoodInterest && {label: '🍜 Food & Restaurants', desc: 'Curated picks by city', to: '/food'},
               hasShoppingInterest && {label: '🛍️ Shopping Guide', desc: 'Local finds and specialities', to: '/shopping'},
-              {label: '🏙️ All Cities', desc: 'Highlights, hotels & tips', to: '/cities'},
               {label: '💬 Phrases', desc: `Speak a little ${TRIP_META.language}`, to: '/phrases'},
             ].filter(Boolean).map(link => (
               <Link key={link.to} to={link.to} style={{textDecoration: 'none'}}>

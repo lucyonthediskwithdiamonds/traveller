@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { TRIP_REGISTRY, DEFAULT_TRIP_ID } from '../trips/registry'
 import { useTripPlan } from '../context/TripPlanContext'
 
@@ -64,7 +64,7 @@ export default function TripBuilder() {
 
   function handleFinish() {
     savePlan({ built: true, country, cities, interests, travelers })
-    navigate('/cities')
+    navigate('/guide')
   }
 
   return (
@@ -76,18 +76,6 @@ export default function TripBuilder() {
         padding: '40px 20px 32px',
         textAlign: 'center',
       }}>
-        {plan.built && (
-          <div style={{ marginBottom: 16 }}>
-            <Link to="/cities" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 6,
-              padding: '7px 16px', borderRadius: 20, fontSize: 13, fontWeight: 600,
-              background: '#fff', color: '#1a1a1a',
-              border: '1.5px solid #e5e5e5', textDecoration: 'none',
-            }}>
-              ← View your cities
-            </Link>
-          </div>
-        )}
         <div style={{ fontSize: 13, color: '#666', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 12 }}>
           Trip Planner
         </div>
@@ -155,7 +143,7 @@ export default function TripBuilder() {
 
               <div style={{ marginTop: 36, display: 'flex', justifyContent: 'flex-end' }}>
                 <button
-                  onClick={() => setStep(2)}
+                  onClick={() => { setStep(2); window.scrollTo({ top: 0, behavior: 'instant' }) }}
                   style={{
                     padding: '12px 32px', background: '#1a1a1a', color: '#fff',
                     border: 'none', borderRadius: 24, fontSize: 15, fontWeight: 700,
@@ -230,7 +218,7 @@ export default function TripBuilder() {
 
               <div style={{ marginTop: 32, display: 'flex', justifyContent: 'space-between', gap: 12 }}>
                 <button
-                  onClick={() => setStep(1)}
+                  onClick={() => { setStep(1); window.scrollTo({ top: 0, behavior: 'instant' }) }}
                   style={{
                     padding: '12px 24px', background: 'none', color: '#666',
                     border: '1px solid #e5e5e5', borderRadius: 24, fontSize: 15, fontWeight: 600,
@@ -240,7 +228,7 @@ export default function TripBuilder() {
                   ← Back
                 </button>
                 <button
-                  onClick={() => setStep(3)}
+                  onClick={() => { setStep(3); window.scrollTo({ top: 0, behavior: 'instant' }) }}
                   style={{
                     padding: '12px 32px', background: '#1a1a1a', color: '#fff',
                     border: 'none', borderRadius: 24, fontSize: 15, fontWeight: 700,
@@ -312,7 +300,7 @@ export default function TripBuilder() {
 
               <div style={{ marginTop: 24, display: 'flex', justifyContent: 'space-between', gap: 12 }}>
                 <button
-                  onClick={() => setStep(2)}
+                  onClick={() => { setStep(2); window.scrollTo({ top: 0, behavior: 'instant' }) }}
                   style={{
                     padding: '12px 24px', background: 'none', color: '#666',
                     border: '1px solid #e5e5e5', borderRadius: 24, fontSize: 15, fontWeight: 600,

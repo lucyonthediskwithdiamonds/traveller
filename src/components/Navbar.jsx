@@ -1,27 +1,34 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useTripData } from '../hooks/useTripData'
 
 const LINKS = [
-  { to: '/guide',    label: 'Home',     icon: '🏠' },
-  { to: '/cities',   label: 'Cities',   icon: '🏙️' },
-  { to: '/food',     label: 'Food',     icon: '🍜' },
-  { to: '/shopping', label: 'Shopping', icon: '🛍️' },
-  { to: '/phrases',  label: 'Phrases',  icon: '💬' },
+  { to: '/guide',    label: 'Your Trip' },
+  { to: '/food',     label: 'Food' },
+  { to: '/shopping', label: 'Shopping' },
+  { to: '/phrases',  label: 'Phrases' },
 ]
 
 export default function Navbar() {
   const { pathname } = useLocation()
+  const { TRIP_META } = useTripData()
 
   return (
     <nav className="nav">
-      {LINKS.map(link => {
-        const active = pathname === link.to
-        return (
-          <Link key={link.to} to={link.to} className={`nav-tab${active ? ' active' : ''}`}>
-            <span className="nav-tab-icon">{link.icon}</span>
-            <span className="nav-tab-label">{link.label}</span>
-          </Link>
-        )
-      })}
+      <div className="container nav-content">
+        <Link to="/guide" className="nav-logo">{TRIP_META.navLogo}</Link>
+        <ul className="nav-links">
+          {LINKS.map(link => (
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                style={pathname === link.to ? { color: 'var(--color-primary)', fontWeight: 700 } : {}}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   )
 }

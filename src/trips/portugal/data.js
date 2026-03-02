@@ -34,7 +34,7 @@ export const CITIES = [
     emoji: '🍷',
     hotel: 'Ribeira or Bonfim',
     desc: 'Granite city on the Douro — dramatic bridges, baroque churches, port wine lodges across the river, and a fierce local pride.',
-    image: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1548521927-c58ed53e4b18?w=800&q=80',
     color: '#8e44ad',
     highlights: [
       'Ribeira waterfront — UNESCO-listed medieval riverside quarter under the Dom Luís I bridge',
@@ -59,7 +59,7 @@ export const CITIES = [
     emoji: '🌊',
     hotel: 'Lagos or Sagres for character; Albufeira for convenience',
     desc: '300 days of sunshine, dramatic golden limestone cliffs, hidden sea caves, and the freshest grilled fish in Europe.',
-    image: 'https://images.unsplash.com/photo-1555993539-1732b0258235?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1562176546-9b4fae4b5ef2?w=800&q=80',
     color: '#e07b39',
     highlights: [
       'Ponta da Piedade — the most dramatic sea stack and cave formations in Europe, best by kayak',
@@ -84,7 +84,7 @@ export const CITIES = [
     emoji: '🏰',
     hotel: 'Day trip from Lisbon (40 min by train) or stay overnight for empty mornings',
     desc: 'A fairy-tale UNESCO landscape of Romantic palaces, Moorish ruins, and dense forest-covered hills above the Atlantic.',
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1570139135759-66e6e7ccfcb4?w=800&q=80',
     color: '#d4a017',
     highlights: [
       'Pena Palace — outrageously colourful 19th-century Romantic palace on a forested peak',
@@ -109,7 +109,7 @@ export const CITIES = [
     emoji: '🍇',
     hotel: 'Quintas (wine estate guesthouses) along the river',
     desc: 'UNESCO-listed terraced vineyards dropping to the Douro river — the birthplace of Port wine and one of Europe\'s great slow-travel experiences.',
-    image: 'https://images.unsplash.com/photo-1550082849-b1f4f7fa56a6?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1523428461295-92770e70d7ae?w=800&q=80',
     color: '#6e2c00',
     highlights: [
       'Quinta da Crasto — spectacular terrace views, excellent red wines, free tasting with tours',
@@ -134,7 +134,7 @@ export const CITIES = [
     emoji: '🌺',
     hotel: 'Funchal\'s Zona Velha (Old Town) or hillside in Monte',
     desc: 'Volcanic Atlantic island of levada walks, sub-tropical gardens, toboggan rides, and the wine that kept the British Empire going.',
-    image: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1513895518469-6f2fe5e7ee7e?w=800&q=80',
     color: '#2d6a4f',
     highlights: [
       'Levada walks — 2,500km of historic irrigation channels through forest and cliffs',

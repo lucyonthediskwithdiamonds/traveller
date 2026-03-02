@@ -12,7 +12,7 @@ export default function CityDetail() {
       <div className="section">
         <div className="container" style={{textAlign: 'center'}}>
           <h2>City not found</h2>
-          <Link to="/cities" className="back-link" style={{marginTop: 20, display: 'inline-flex'}}>← Back to cities</Link>
+          <Link to="/guide" className="back-link" style={{marginTop: 20, display: 'inline-flex'}}>← Back to your trip</Link>
         </div>
       </div>
     )

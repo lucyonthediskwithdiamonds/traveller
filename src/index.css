@@ -18,10 +18,9 @@ body {
   color: #2c2416;
   line-height: 1.6;
   overflow-x: hidden;
-  padding-bottom: 72px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 a { color: inherit; text-decoration: none; }
 button { cursor: pointer; border: none; font-family: inherit; }
@@ -89,51 +88,52 @@ h1 { font-size: 48px; margin-bottom: 24px; }
 h2 { font-size: 36px; margin-bottom: 20px; }
 h3 { font-size: 24px; margin-bottom: 16px; }
 
-/* ── Navbar (bottom tab bar) ───────────────────────────── */
+/* ── Navbar (top sticky bar) ───────────────────────────── */
 
 .nav {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
-  box-shadow: 0 -2px 20px rgba(var(--color-primary-rgb), 0.12);
-  position: fixed;
-  bottom: 0;
+  box-shadow: 0 2px 20px rgba(var(--color-primary-rgb), 0.1);
+  position: sticky;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 200;
-  border-top: 1px solid rgba(var(--color-primary-rgb), 0.15);
-  display: flex;
-  justify-content: space-around;
-  align-items: stretch;
-  height: 64px;
-  padding-bottom: env(safe-area-inset-bottom);
+  border-bottom: 1px solid rgba(var(--color-primary-rgb), 0.12);
 }
 
-.nav-tab {
+.nav-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex: 1;
-  gap: 3px;
-  text-decoration: none;
-  color: #9a7a8a;
-  transition: color 0.2s;
-  padding: 8px 4px;
+  justify-content: space-between;
+  height: 60px;
 }
 
-.nav-tab.active {
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--color-primary);
+  text-decoration: none;
 }
 
-.nav-tab-icon {
-  font-size: 20px;
-  line-height: 1;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  align-items: center;
 }
 
-.nav-tab-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b5a4a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
 }
 
 /* ── Hero ──────────────────────────────────────────────── */

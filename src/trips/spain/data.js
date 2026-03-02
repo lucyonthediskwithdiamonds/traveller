@@ -59,7 +59,7 @@ export const CITIES = [
     emoji: '💃',
     hotel: 'EME Catedral Hotel / Santa Cruz neighbourhood',
     desc: 'The soul of Andalusia — flamenco, orange trees, Moorish palaces and scorching summer heat.',
-    image: 'https://images.unsplash.com/photo-1550082849-b1f4f7fa56a6?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1551867633-194e4b0d4b83?w=800&q=80',
     color: '#e07b39',
     highlights: [
       'Real Alcázar — spectacular Mudejar royal palace, UNESCO, still used by Spanish royals (€14.50)',
@@ -84,7 +84,7 @@ export const CITIES = [
     emoji: '🏰',
     hotel: 'Parador de Granada / Albaicín neighbourhood',
     desc: 'The Alhambra, Sacromonte caves, and the best free tapas culture in Spain.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1529460600437-66236dc066f9?w=800&q=80',
     color: '#d4558f',
     highlights: [
       'Alhambra Palace & Generalife Gardens — UNESCO, the pinnacle of Moorish architecture (€19, must book 2+ weeks ahead)',
@@ -109,7 +109,7 @@ export const CITIES = [
     emoji: '🐚',
     hotel: 'Hotel de Londres y de Inglaterra / Parte Vieja',
     desc: 'The culinary capital of Europe — more Michelin stars per capita than anywhere on earth.',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1509233725247-49e657c54213?w=800&q=80',
     color: '#27ae60',
     highlights: [
       'Pintxos bars of Parte Vieja — the Old Town is one giant tapas bar, €2–3 per pintxo',
