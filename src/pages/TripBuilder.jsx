@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { TRIP_REGISTRY } from '../trips/registry'
+import { TRIP_REGISTRY, DEFAULT_TRIP_ID } from '../trips/registry'
 import { useTripPlan } from '../context/TripPlanContext'
 
 const DESTINATIONS = [
@@ -35,7 +35,7 @@ export default function TripBuilder() {
   const { plan, savePlan } = useTripPlan()
 
   const [step, setStep] = useState(1)
-  const [country, setCountry] = useState(plan.country || 'japan')
+  const [country, setCountry] = useState(plan.country || DEFAULT_TRIP_ID)
   const [cities, setCities] = useState(plan.cities?.length ? plan.cities : [])
   const [interests, setInterests] = useState(plan.interests?.length ? plan.interests : [])
 
