@@ -126,11 +126,55 @@ export const DENIM_TIPS = [
 ]
 
 export const SHOPPING_TABS = [
-  { id: 'knives',   icon: '🔪', label: 'Knives' },
-  { id: 'watches',  icon: '⌚', label: 'Watches' },
-  { id: 'denim',    icon: '👖', label: 'Denim' },
-  { id: 'vintage',  icon: '🛍️', label: 'Vintage' },
-  { id: 'clothing', icon: '👕', label: 'Clothing' },
+  {
+    id: 'knives', icon: '🔪', label: 'Knives',
+    sections: [
+      { type: 'wishlist', emoji: '🔪', title: 'Knife Wishlist', sub: '3 knives · Budget ~€600 total · Prioritise Bunka first, then Sujihiki, then Honesuki', items: KNIFE_WISHLIST },
+      { type: 'shop-grid', title: 'Best Knife Shops', emoji: '🗺️', shops: KNIFE_SHOPS },
+      { type: 'japan-knife-reference' },
+    ],
+  },
+  {
+    id: 'watches', icon: '⌚', label: 'Watches',
+    sections: [
+      { type: 'watch-wishlist', emoji: '⌚', title: 'Watch Wishlist', sub: 'Budget up to €1,000 per watch · Warm gold tones · Dress pieces and complications only — no sports watches', items: WATCHES },
+      { type: 'shop-grid', title: 'Best Watch Shops', emoji: '⌚', shops: WATCH_SHOPS },
+    ],
+  },
+  {
+    id: 'denim', icon: '👖', label: 'Denim',
+    sections: [
+      { type: 'brand-grid', emoji: '👖', title: 'Selvedge Denim Guide', sub: 'Japanese selvedge only · Budget €250–400 per pair · Free chain-stitch hemming at most stores', items: DENIM_BRANDS },
+      { type: 'tips', title: 'Denim Tips', tips: DENIM_TIPS },
+    ],
+  },
+  {
+    id: 'vintage', icon: '🛍️', label: 'Vintage',
+    sections: [
+      {
+        type: 'city-sections',
+        emoji: '🛍️', title: 'Vintage Shopping',
+        sub: 'Best vintage & pre-owned luxury across all three cities · Always carry passport for tax exemption',
+        cities: [
+          {
+            emoji: '🗼', city: 'Tokyo',
+            neighbourhoods: [
+              { name: 'Harajuku', sub: 'Curated · High-end archive', shops: VINTAGE_TOKYO_HARAJUKU },
+              { name: 'Shimokitazawa', sub: 'Bohemian · Budget a full afternoon', shops: VINTAGE_TOKYO_SHIMOKITA },
+            ],
+          },
+          { emoji: '🏯', city: 'Osaka', shops: VINTAGE_OSAKA },
+          { emoji: '🌸', city: 'Kyoto', shops: VINTAGE_KYOTO },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'clothing', icon: '👕', label: 'Clothing',
+    sections: [
+      { type: 'shop-grid', emoji: '👕', title: 'Japanese Clothing', sub: 'Four aesthetics: Streetwear · Avant-garde · Workwear / Folk Art · Artisan Traditional', shops: CLOTHING_SHOPS },
+    ],
+  },
 ]
 
 export const PRIORITY_COLOR = { HIGHEST: '#d4558f', HIGH: '#e07b39', MEDIUM: '#4a90d9' }

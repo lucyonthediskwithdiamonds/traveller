@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
-import { CITIES, TRIP, TRIP_META } from '../config/activeTrip'
+import { useTripData } from '../hooks/useTripData'
 
 export default function CitySelect() {
+  const { CITIES, TRIP_META } = useTripData()
+
   return (
     <div className="section">
       <div className="container">
         <div style={{textAlign: 'center', marginBottom: 56}}>
           <h1 style={{marginBottom: 12}}>Choose Your City</h1>
-          <p style={{fontSize: 17, color: '#7a5060'}}>{TRIP.travelers}</p>
         </div>
 
         <div className="city-grid">
@@ -26,11 +27,11 @@ export default function CitySelect() {
         </div>
 
         <div style={{
-          background: 'rgba(244, 213, 224, 0.2)',
+          background: 'rgba(var(--color-primary-rgb), 0.05)',
           padding: '28px 32px',
           borderRadius: 16,
           textAlign: 'center',
-          border: '1px solid rgba(212, 85, 143, 0.15)'
+          border: '1px solid rgba(var(--color-primary-rgb), 0.15)'
         }}>
           <p style={{color: '#6b4a5a', fontSize: 15}}>
             {TRIP_META.citiesTagline}

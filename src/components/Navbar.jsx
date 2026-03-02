@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom'
-import { TRIP_META } from '../config/activeTrip'
+import { useTripData } from '../hooks/useTripData'
 
 const LINKS = [
-  { to: '/', label: 'Home' },
+  { to: '/guide', label: 'Guide' },
   { to: '/cities', label: 'Cities' },
   { to: '/food', label: 'Food' },
   { to: '/shopping', label: 'Shopping' },
@@ -12,6 +12,7 @@ const LINKS = [
 
 export default function Navbar() {
   const { pathname } = useLocation()
+  const { TRIP_META } = useTripData()
 
   return (
     <nav className="nav">
@@ -22,7 +23,7 @@ export default function Navbar() {
             <li key={link.to}>
               <Link
                 to={link.to}
-                style={pathname === link.to ? {color: '#d4558f', fontWeight: 700} : {}}
+                style={pathname === link.to ? {color: 'var(--color-primary)', fontWeight: 700} : {}}
               >
                 {link.label}
               </Link>

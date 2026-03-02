@@ -1,45 +1,42 @@
 import { Link } from 'react-router-dom'
-import { TRIP, CITIES, TRIP_META } from '../config/activeTrip'
+import { useTripData } from '../hooks/useTripData'
 import { useTripPlan } from '../context/TripPlanContext'
 
 export default function Home() {
   const { plan, resetPlan } = useTripPlan()
+  const { CITIES, TRIP_META, SHOPPING_TABS } = useTripData()
 
   // Filter cities to the ones selected in the trip plan (or show all if none built / none selected)
   const visibleCities = plan.built && plan.cities.length > 0
     ? CITIES.filter(c => plan.cities.includes(c.id))
     : CITIES
 
-  // Derive quick links — always show, but order by interests if plan is built
-  const shoppingInterests = ['knives', 'watches', 'denim', 'vintage', 'clothing']
-  const hasShoppingInterest = !plan.built || plan.interests.some(i => shoppingInterests.includes(i))
-  const hasFoodInterest = !plan.built || plan.interests.includes('food') || plan.interests.length === 0
+  // Derive quick links — shopping interest derived from SHOPPING_TABS
+  const shoppingTabIds = (SHOPPING_TABS || []).map(t => t.id)
+  const hasShoppingInterest = !plan.built || plan.interests.some(i => shoppingTabIds.includes(i)) || plan.interests.includes('shopping')
+  const hasFoodInterest = !plan.built || plan.interests.includes('food') || plan.interests.includes('restaurants') || plan.interests.length === 0
 
   return (
     <div>
       {/* Hero */}
       <div className="hero">
         <div className="hero-content">
-          <div style={{fontSize: 13, marginBottom: 20, color: '#d4558f', fontFamily: 'Noto Sans JP, sans-serif', letterSpacing: '0.18em', textTransform: 'uppercase', fontWeight: 500}}>
-            ✿ {TRIP.travelers} ✿
-          </div>
           <h1>{TRIP_META.name} Trip</h1>
-          <p className="route-text">{TRIP.route}</p>
 
           <div className="stat-pills">
-            <span className="stat-pill">🗺️ {TRIP.route.split(' → ').length} Cities</span>
-            <span className="stat-pill">🏨 Hotels + Ryokan</span>
-            <span className="stat-pill">🍱 40+ Restaurants</span>
+            <span className="stat-pill">🏙️ {CITIES.length} Cities</span>
+            <span className="stat-pill">🏨 Hotels + Stays</span>
+            <span className="stat-pill">🍽️ Restaurants</span>
           </div>
 
           {/* Trip plan status */}
           {plan.built ? (
             <div style={{marginTop: 20, display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap'}}>
-              <Link to="/plan" style={{
+              <Link to="/" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 6,
                 padding: '8px 18px', borderRadius: 20, fontSize: 13, fontWeight: 600,
-                background: 'rgba(255,255,255,0.85)', color: '#d4558f',
-                border: '1.5px solid rgba(212,85,143,0.35)', textDecoration: 'none',
+                background: 'rgba(255,255,255,0.85)', color: 'var(--color-primary)',
+                border: '1.5px solid rgba(var(--color-primary-rgb), 0.35)', textDecoration: 'none',
               }}>
                 ✏️ Edit trip
               </Link>
@@ -58,14 +55,14 @@ export default function Home() {
             </div>
           ) : (
             <div style={{marginTop: 20}}>
-              <Link to="/plan" style={{
+              <Link to="/" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
                 padding: '12px 28px', borderRadius: 24, fontSize: 15, fontWeight: 700,
-                background: 'rgba(255,255,255,0.92)', color: '#d4558f',
+                background: 'rgba(255,255,255,0.92)', color: 'var(--color-primary)',
                 border: 'none', textDecoration: 'none',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
               }}>
-                🌸 Plan your trip
+                ✈️ Plan your trip
               </Link>
             </div>
           )}
@@ -87,8 +84,8 @@ export default function Home() {
       {/* Trip plan summary banner (when built) */}
       {plan.built && plan.cities.length > 0 && (
         <div style={{
-          background: 'rgba(212,85,143,0.07)',
-          borderBottom: '1px solid rgba(212,85,143,0.12)',
+          background: 'rgba(var(--color-primary-rgb), 0.07)',
+          borderBottom: '1px solid rgba(var(--color-primary-rgb), 0.12)',
           padding: '14px 20px',
           textAlign: 'center',
         }}>
@@ -116,7 +113,6 @@ export default function Home() {
                 <div className="city-card-body">
                   <span className="city-card-emoji">{city.emoji}</span>
                   <div className="city-card-name">{city.name}</div>
-                  <div className="city-card-dates">{city.desc.split('.')[0]}</div>
                   <div className="city-card-desc">{city.desc}</div>
                 </div>
               </Link>
@@ -125,7 +121,7 @@ export default function Home() {
 
           {plan.built && plan.cities.length > 0 && plan.cities.length < CITIES.length && (
             <div style={{textAlign: 'center', marginTop: 16}}>
-              <Link to="/cities" style={{fontSize: 14, color: '#d4558f', textDecoration: 'none', fontWeight: 600}}>
+              <Link to="/cities" style={{fontSize: 14, color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 600}}>
                 View all {CITIES.length} cities →
               </Link>
             </div>
@@ -134,7 +130,7 @@ export default function Home() {
       </div>
 
       {/* Highlights */}
-      <div className="section" style={{background: 'rgba(244, 213, 224, 0.12)', borderTop: '1px solid rgba(212,85,143,0.12)'}}>
+      <div className="section" style={{background: 'rgba(var(--color-primary-rgb), 0.05)', borderTop: '1px solid rgba(var(--color-primary-rgb), 0.12)'}}>
         <div className="container">
           <div className="section-header">
             <h2>Trip Highlights</h2>
@@ -156,15 +152,15 @@ export default function Home() {
       <div className="section">
         <div className="container">
           <div className="section-header">
-            <h2>Plan Your Trip</h2>
+            <h2>Explore Your Guide</h2>
             <p>Everything organised for the perfect adventure</p>
           </div>
           <div className="grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'}}>
             {[
-              hasFoodInterest && {label: '🍜 Food & Restaurants', desc: '40+ curated picks by city', to: '/food'},
-              hasShoppingInterest && {label: '🛍️ Shopping Guide', desc: 'Knives, watches, denim & vintage', to: '/shopping'},
+              hasFoodInterest && {label: '🍜 Food & Restaurants', desc: 'Curated picks by city', to: '/food'},
+              hasShoppingInterest && {label: '🛍️ Shopping Guide', desc: 'Local finds and specialities', to: '/shopping'},
               {label: '🏙️ All Cities', desc: 'Highlights, hotels & tips', to: '/cities'},
-              {label: '🗾 Phrases', desc: `Speak a little ${TRIP_META.language}`, to: '/phrases'},
+              {label: '💬 Phrases', desc: `Speak a little ${TRIP_META.language}`, to: '/phrases'},
             ].filter(Boolean).map(link => (
               <Link key={link.to} to={link.to} style={{textDecoration: 'none'}}>
                 <div className="card" style={{textAlign: 'center', padding: 28, cursor: 'pointer'}}>

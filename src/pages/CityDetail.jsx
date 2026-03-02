@@ -1,9 +1,10 @@
 import { useParams, Link } from 'react-router-dom'
-import { CITIES } from '../config/activeTrip'
+import { useTripData } from '../hooks/useTripData'
 import { mapsUrl } from '../utils/maps'
 
 export default function CityDetail() {
   const { city: cityId } = useParams()
+  const { CITIES } = useTripData()
   const city = CITIES.find(c => c.id === cityId)
 
   if (!city) {
@@ -62,7 +63,7 @@ export default function CityDetail() {
                   <li key={i} style={{display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 8}}>
                     <span>{h}</span>
                     <a href={mapsUrl(h, city.name)} target="_blank" rel="noopener noreferrer"
-                       style={{flexShrink: 0, fontSize: 12, color: '#d4558f', textDecoration: 'none', opacity: 0.8}}>
+                       style={{flexShrink: 0, fontSize: 12, color: 'var(--color-primary)', textDecoration: 'none', opacity: 0.8}}>
                       📍 Maps
                     </a>
                   </li>

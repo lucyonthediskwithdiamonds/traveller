@@ -1,5 +1,4 @@
 export const TRIP = {
-  travelers: 'Simon & Monize',
   route: 'Tokyo → Hakone → Yudanaka → Kanazawa → Kyoto → Koyasan → Osaka → Hiroshima → Miyajima → Tokyo',
 }
 

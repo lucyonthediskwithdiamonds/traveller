@@ -1,16 +1,17 @@
 import { useState } from 'react'
-import { RESTAURANTS, CITIES } from '../config/activeTrip'
+import { useTripData } from '../hooks/useTripData'
 import { useTripPlan } from '../context/TripPlanContext'
 import { mapsUrl } from '../utils/maps'
 
 export default function Food() {
   const { plan } = useTripPlan()
+  const { RESTAURANTS, CITIES } = useTripData()
 
   const visibleCities = plan.built && plan.cities.length > 0
     ? CITIES.filter(c => plan.cities.includes(c.id))
     : CITIES
 
-  const [activeCity, setActiveCity] = useState(visibleCities[0]?.id || 'tokyo')
+  const [activeCity, setActiveCity] = useState(visibleCities[0]?.id || CITIES[0]?.id)
   const restaurants = RESTAURANTS[activeCity] || []
   const city = CITIES.find(c => c.id === activeCity)
 
@@ -21,11 +22,11 @@ export default function Food() {
         background: 'linear-gradient(135deg, rgba(255,220,180,0.4), rgba(255,192,203,0.3))',
         padding: '60px 20px 48px',
         textAlign: 'center',
-        borderBottom: '1px solid rgba(212,85,143,0.15)',
+        borderBottom: '1px solid rgba(var(--color-primary-rgb), 0.15)',
       }}>
         <div style={{fontSize: 48, marginBottom: 12}}>🍜</div>
         <h1 style={{marginBottom: 10}}>Food & Restaurants</h1>
-        <p style={{color: '#7a5060', fontSize: 17}}>40+ curated picks across 9 cities — sourced from wildon.earth/japan</p>
+        <p style={{color: '#7a5060', fontSize: 17}}>Curated picks across {CITIES.length} cities</p>
       </div>
 
       <div className="section">
@@ -83,7 +84,7 @@ export default function Food() {
                   )}
                   <a href={mapsUrl(`${r.name} ${r.area || ''}`, city?.name || activeCity)}
                      target="_blank" rel="noopener noreferrer"
-                     style={{display: 'inline-block', marginTop: 4, fontSize: 12, color: '#d4558f', textDecoration: 'none', fontWeight: 500}}>
+                     style={{display: 'inline-block', marginTop: 4, fontSize: 12, color: 'var(--color-primary)', textDecoration: 'none', fontWeight: 500}}>
                     📍 View on Maps
                   </a>
                 </div>

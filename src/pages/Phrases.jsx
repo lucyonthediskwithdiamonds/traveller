@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { PRACTICAL, TRIP_META } from '../config/activeTrip'
+import { useTripData } from '../hooks/useTripData'
 
 export default function Phrases() {
+  const { PRACTICAL, TRIP_META } = useTripData()
   const [activeCategory, setActiveCategory] = useState(0)
   const [copied, setCopied] = useState(null)
   const categories = PRACTICAL.phrasesByCategory
