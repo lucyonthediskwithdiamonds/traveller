@@ -14,7 +14,7 @@ export default function Home() {
   // Derive quick links — shopping interest derived from SHOPPING_TABS
   const shoppingTabIds = (SHOPPING_TABS || []).map(t => t.id)
   const hasShoppingInterest = !plan.built || plan.interests.some(i => shoppingTabIds.includes(i)) || plan.interests.includes('shopping')
-  const hasFoodInterest = !plan.built || plan.interests.includes('food') || plan.interests.includes('restaurants') || plan.interests.length === 0
+  const hasFoodInterest = !plan.built || plan.interests.includes('restaurants') || plan.interests.length === 0
 
   return (
     <div>

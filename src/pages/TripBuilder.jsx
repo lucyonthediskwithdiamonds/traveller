@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { TRIP_REGISTRY } from '../trips/registry'
+import { TRIP_REGISTRY, DEFAULT_TRIP_ID } from '../trips/registry'
 import { useTripPlan } from '../context/TripPlanContext'
 
 const DESTINATIONS = [
@@ -35,15 +35,15 @@ export default function TripBuilder() {
   const { plan, savePlan } = useTripPlan()
 
   const [step, setStep] = useState(1)
-  const [country, setCountry] = useState(plan.country || 'japan')
+  const [country, setCountry] = useState(plan.country || DEFAULT_TRIP_ID)
   const [cities, setCities] = useState(plan.cities?.length ? plan.cities : [])
   const [interests, setInterests] = useState(plan.interests?.length ? plan.interests : [])
 
   // Cities for the currently-selected country (before committing)
-  const activeCities = (TRIP_REGISTRY[country] || TRIP_REGISTRY['japan']).CITIES || []
+  const activeCities = TRIP_REGISTRY[country]?.CITIES || []
 
   // Interests: universal + any specialist tabs from the selected country's shopping
-  const shopTabs = (TRIP_REGISTRY[country] || TRIP_REGISTRY['japan']).SHOPPING_TABS || []
+  const shopTabs = TRIP_REGISTRY[country]?.SHOPPING_TABS || []
   const specialistInterests = shopTabs
     .filter(t => !UNIVERSAL_INTERESTS.find(u => u.id === t.id))
     .map(t => ({ id: t.id, emoji: t.icon, label: t.label, desc: '' }))

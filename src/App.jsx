@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import { TripPlanProvider } from './context/TripPlanContext'
 import { useTripData } from './hooks/useTripData'
 import Navbar from './components/Navbar'
@@ -13,10 +14,17 @@ import Shopping from './pages/Shopping'
 import TripBuilder from './pages/TripBuilder'
 import Phrases from './pages/Phrases'
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
+
 function AppShell() {
   const { TRIP_META } = useTripData()
   return (
     <>
+      <ScrollToTop />
       {TRIP_META.cherryBlossoms && <CherryBlossoms count={20} />}
       <Navbar />
       <Routes>

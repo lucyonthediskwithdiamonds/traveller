@@ -35,7 +35,7 @@ export function TripPlanProvider({ children }) {
     root.setProperty('--color-primary', primary)
     root.setProperty('--color-primary-rgb', `${r}, ${g}, ${b}`)
     root.setProperty('--gradient-bg', gradient)
-  }, [tripData])
+  }, [activeCountry])
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(plan))
