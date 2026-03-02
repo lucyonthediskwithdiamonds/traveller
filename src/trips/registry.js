@@ -13,6 +13,9 @@ import * as portugalShopping from './portugal/shopping'
 import * as spainCore      from './spain/index'
 import * as spainShopping  from './spain/shopping'
 import * as thailandCore   from './thailand/index'
+import * as turkeyCore    from './turkey/index'
+import * as moroccoCore   from './morocco/index'
+import * as usaCore       from './usa/index'
 
 export const TRIP_REGISTRY = {
   japan:    { ...japanCore,    ...japanShop },
@@ -22,6 +25,9 @@ export const TRIP_REGISTRY = {
   portugal: { ...portugalCore, ...portugalShopping },
   spain:    { ...spainCore,    ...spainShopping },
   thailand: { ...thailandCore },
+  turkey:   { ...turkeyCore },
+  morocco:  { ...moroccoCore },
+  usa:      { ...usaCore },
 }
 
 export const DEFAULT_TRIP_ID = 'japan'
