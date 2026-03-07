@@ -190,7 +190,17 @@ export default function TripBuilder() {
                         transition: 'outline 0.15s',
                       }}
                     >
-                      <img src={city.image} alt={city.name} className="city-card-img" />
+                      <img
+                        src={city.image}
+                        alt={city.name}
+                        className="city-card-img"
+                        loading="lazy"
+                        onError={e => {
+                          e.currentTarget.style.display = 'none'
+                          e.currentTarget.parentElement.style.background =
+                            `linear-gradient(135deg, ${city.color}cc 0%, ${city.color}66 100%)`
+                        }}
+                      />
                       <div className="city-card-overlay" style={{ background: selected ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,0.35)' }} />
                       <div className="city-card-body">
                         <span className="city-card-emoji">{city.emoji}</span>

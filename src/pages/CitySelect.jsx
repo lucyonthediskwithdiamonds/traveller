@@ -22,7 +22,17 @@ export default function CitySelect() {
         <div className="city-grid">
           {visibleCities.map((city) => (
             <Link key={city.id} to={`/cities/${city.id}`} className="city-card">
-              <img src={city.image} alt={city.name} className="city-card-img" />
+              <img
+                src={city.image}
+                alt={city.name}
+                className="city-card-img"
+                loading="lazy"
+                onError={e => {
+                  e.currentTarget.style.display = 'none'
+                  e.currentTarget.parentElement.style.background =
+                    `linear-gradient(135deg, ${city.color}cc 0%, ${city.color}66 100%)`
+                }}
+              />
               <div className="city-card-overlay" style={{background: `linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.1) 55%, transparent 100%)`}} />
               <div className="city-card-body">
                 <span className="city-card-emoji">{city.emoji}</span>
