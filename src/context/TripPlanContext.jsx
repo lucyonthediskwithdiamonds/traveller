@@ -26,17 +26,23 @@ export function TripPlanProvider({ children }) {
   const activeCountry = plan.country || DEFAULT_TRIP_ID
   const tripData = TRIP_REGISTRY[activeCountry] || TRIP_REGISTRY[DEFAULT_TRIP_ID]
 
-  // Inject CSS custom properties when trip changes
+  // Inject CSS custom properties — greyscale until trip is built, then country theme
   useEffect(() => {
+    const root = document.documentElement.style
+    if (!plan.built) {
+      root.setProperty('--color-primary', '#6b7280')
+      root.setProperty('--color-primary-rgb', '107, 114, 128')
+      root.setProperty('--gradient-bg', 'linear-gradient(160deg, #f9fafb 0%, #f3f4f6 50%, #f1f5f9 100%)')
+      return
+    }
     const { primary, gradient } = tripData.TRIP_META.theme
     const r = parseInt(primary.slice(1, 3), 16)
     const g = parseInt(primary.slice(3, 5), 16)
     const b = parseInt(primary.slice(5, 7), 16)
-    const root = document.documentElement.style
     root.setProperty('--color-primary', primary)
     root.setProperty('--color-primary-rgb', `${r}, ${g}, ${b}`)
     root.setProperty('--gradient-bg', gradient)
-  }, [activeCountry])
+  }, [activeCountry, plan.built])
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(plan))

@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Kosugi+Maru&display=swap');
 
 :root {
-  --color-primary: var(--color-primary);
-  --color-primary-rgb: 212, 85, 143;
-  --gradient-bg: linear-gradient(160deg, #fff0f5 0%, #fef5f0 50%, #f5f0ff 100%);
+  --color-primary: #6b7280;
+  --color-primary-rgb: 107, 114, 128;
+  --gradient-bg: linear-gradient(160deg, #f9fafb 0%, #f3f4f6 50%, #f1f5f9 100%);
 }
 
 * {
@@ -796,11 +796,9 @@ h3 { font-size: 24px; margin-bottom: 16px; }
   .city-section { padding: 24px 20px; }
 }
 
-/* ── Trip Builder — Neutral B&W theme ─────────────────── */
+/* ── Trip Builder ──────────────────────────────────────── */
 
 [data-section="builder"] {
-  --color-primary: #1a1a1a;
-  --color-primary-rgb: 26, 26, 26;
   background: #ffffff;
   min-height: 100vh;
 }
