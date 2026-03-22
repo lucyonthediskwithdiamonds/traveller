@@ -97,11 +97,13 @@ export const WATCHES = [
   { name: 'Seiko Presage Moonphase', ref: 'SRPK41', budget: '€500–650', yen: '¥85–110k', notes: 'Warm champagne dial. Moonphase complication. Same dress register as your Adidas — perfect companion piece.', priority: true },
   { name: 'Seiko Presage Chronograph', ref: 'SSC935', budget: '€600–800', yen: '¥100–130k', notes: 'Elegant chronograph. Santos-adjacent energy. More wearable daily than vintage options.', priority: false },
   { name: 'Orient Star Skeleton', ref: 'RE-AZ0001S', budget: '€350–450', yen: '¥60–80k', notes: 'Gold/rose gold tone. Open movement visible. Dramatic — incredible for the price.', priority: false },
+  { name: 'Kuoe Original Timepiece', ref: null, budget: '€200–500', yen: '¥35–85k', notes: 'Kyoto-based independent. Warm dial colours, dress-only aesthetic. Understated and distinctive — worth visiting the flagship in person.', priority: false },
 ]
 
 export const WATCH_SHOPS = [
   { name: 'Grand Seiko Boutique Ginza', city: 'Tokyo', area: 'Ginza', rating: '4.6', reviews: '104', type: 'New Models', notes: 'Flagship. Full Presage & Grand Seiko range. ~10% tax-free with passport.', priority: true },
   { name: 'Big Moon Kyoto', city: 'Kyoto', area: 'Kyoto', rating: '5.0', reviews: '326', type: 'Grand Seiko', notes: 'Best Grand Seiko collection in Japan. Ask for Shoji. Closed Thursdays.', priority: true },
+  { name: 'Kuoe Flagship — Kyoto', city: 'Kyoto', area: 'Kyoto', rating: '4.8', reviews: null, type: 'Independent / Dress', notes: 'Kyoto-based independent watchmaker. Warm tones, dress-only line-up. A rare find — no online sales, Kyoto only.', priority: true },
   { name: 'Watch Square Kyoto', city: 'Kyoto', area: 'Kyoto', rating: '5.0', reviews: '397', type: 'New + Discount', notes: 'Extra 7% off on top of tax-free. New models. Great for Moonphase.', priority: false },
   { name: 'WATCHNIAN Shinjuku', city: 'Tokyo', area: 'Shinjuku', rating: '4.9', reviews: '831', type: 'Pre-owned', notes: 'Pre-owned specialist. English staff. Free sizing.', priority: false },
   { name: 'WATCHNIAN Osaka Honten', city: 'Osaka', area: 'Osaka', rating: '4.9', reviews: '438', type: 'Pre-owned', notes: 'Pre-owned. Warmest staff. Good Orient Star stock.', priority: false },
@@ -153,7 +155,7 @@ export const SHOPPING_TABS = [
   {
     id: 'accessories', icon: '⌚', label: 'Accessories',
     sections: [
-      { type: 'watch-wishlist', emoji: '⌚', title: 'Watches', sub: 'Budget up to €1,000 per watch · Warm gold tones · Dress pieces and complications only', items: WATCHES },
+      { type: 'watch-wishlist', emoji: '⌚', title: 'Watches', sub: 'Budget up to €1,000 per watch · Warm gold tones · Dress pieces and complications only · Kuoe independent in Kyoto', items: WATCHES },
       { type: 'shop-grid', title: 'Watch Shops', emoji: '⌚', shops: WATCH_SHOPS },
     ],
   },
