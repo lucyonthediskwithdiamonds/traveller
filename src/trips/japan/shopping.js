@@ -18,10 +18,13 @@ export const VINTAGE_TOKYO_SHIMOKITA = [
   { name: 'TreFacStyle Shimokitazawa', city: 'Tokyo', area: 'Shimokitazawa', rating: '4.9', reviews: '692', type: 'Designer', notes: 'Celine to Acne Studio. Excellent value for the curation level.', priority: false },
   { name: 'Treasure Factory Style', city: 'Tokyo', area: 'Shimokitazawa', rating: '4.6', reviews: '621', type: 'Budget Gems', notes: 'Biggest store. Near-mint pieces for under €30.', priority: false },
   { name: 'iot reverse', city: 'Tokyo', area: 'Shimokitazawa', rating: '4.9', reviews: '106', type: 'Rare / Curated', notes: 'Rare band tees, curated cool, legendary owner. Open until MIDNIGHT.', priority: false, highlight: 'MIDNIGHT' },
+  { name: 'Ragtag Shimokitazawa', city: 'Tokyo', area: 'Shimokitazawa', rating: '4.4', reviews: null, type: 'Designer Resale', notes: 'Ranked #4 thrift in Japan. Higher-end consignment chain — Shibuya, Shinjuku & Shimokita locations. Best for designer finds at resale prices.', priority: false },
 ]
 
 export const VINTAGE_OSAKA = [
   { name: 'Kindal Shinsaibashi Amerikamura', city: 'Osaka', area: 'Amerikamura', rating: '4.9', reviews: '1,909', type: 'Archive Fashion', notes: 'Crown jewel. Entire floor of CDG/Yohji archive. Best vintage store many reviewers have ever visited.', priority: true, highlight: 'CROWN JEWEL' },
+  { name: 'JAM Trading Osaka', city: 'Osaka', area: 'Amerikamura', rating: '4.4', reviews: null, type: 'Mid-range Vintage', notes: 'Ranked #5 thrift in Japan. Well-curated mid-range vintage. Multiple floors in Amerikamura — great for digging.', priority: false },
+  { name: 'Kinji Shinsaibashi', city: 'Osaka', area: 'Amerikamura', rating: '4.3', reviews: null, type: 'Budget Vintage', notes: 'Ranked #6 thrift in Japan. Budget-friendly vintage chain. Massive selection — worth a few hours digging. Also in Tokyo (Harajuku).', priority: false },
   { name: 'ALLU Shinsaibashi', city: 'Osaka', area: 'Shinsaibashi', rating: '5.0', reviews: '1,845', type: 'Pre-owned Luxury', notes: 'Hermès, Chanel, LV. Original packaging. Staff will hold items.', priority: false },
   { name: 'ACORN Minamisenba', city: 'Osaka', area: 'Minamisenba', rating: '4.9', reviews: '587', type: 'Curated Rare', notes: 'Tight curated edit. Rare pieces. Pricier but worth it.', priority: false },
   { name: 'TreFacStyle Amerikamura', city: 'Osaka', area: 'Amerikamura', rating: '4.5', reviews: '330', type: 'Americana / Workwear', notes: '3 floors of Americana and workwear. Closed Tuesdays.', priority: false },
@@ -31,6 +34,11 @@ export const VINTAGE_KYOTO = [
   { name: 'SALAMANCA Vintage Kyoto Shijo', city: 'Kyoto', area: 'Shijo', rating: '5.0', reviews: '1,234', type: 'Luxury Archive', notes: 'Prices cheaper than Tokyo. Rare Issey Miyake, Gucci, Fendi. Tax-free with passport.', priority: true, highlight: 'BEST VALUE' },
   { name: 'BRING Kyoto Kawaramachi', city: 'Kyoto', area: 'Kawaramachi', rating: '4.9', reviews: '276', type: 'Designer Clothing', notes: 'Cheapest Chrome Hearts found across all 3 cities. Great designer clothing.', priority: false },
   { name: 'Big Time Kyoto', city: 'Kyoto', area: 'Kyoto', rating: '4.1', reviews: '94', type: 'Museum-Like', notes: '"Museum where everything is for sale." 4 floors sorted by type and colour. Immaculate curation.', priority: false },
+]
+
+export const THRIFT_CHAINS = [
+  { name: 'Book Off', city: 'Multiple', area: 'Nationwide', rating: null, reviews: null, type: 'Mega Thrift', notes: 'Ranked #2 thrift in Japan. Books, vinyl, manga, clothing, games, goods — everything. "Book Off Super Bazaar" stores are enormous. Worth a detour anywhere you see one.', priority: true, highlight: '#2 IN JAPAN' },
+  { name: '2nd Street', city: 'Multiple', area: 'Nationwide', rating: null, reviews: null, type: 'Chain Thrift', notes: 'Ranked #3 thrift in Japan. Clean, organised chain with hundreds of locations. Clothing, bags, shoes. Good for basics and occasional quality finds.', priority: false },
 ]
 
 export const CLOTHING_SHOPS = [
@@ -145,6 +153,7 @@ export const SHOPPING_TABS = [
           { emoji: '🌸', city: 'Kyoto', shops: VINTAGE_KYOTO },
         ],
       },
+      { type: 'shop-grid', emoji: '🛒', title: 'Thrift Chains', sub: 'Nationwide chains worth knowing — Book Off & 2nd Street are everywhere', shops: THRIFT_CHAINS },
       { type: 'shop-grid', emoji: '👕', title: 'Clothing Boutiques', sub: 'Streetwear · Avant-garde · Workwear / Folk Art · Artisan Traditional', shops: CLOTHING_SHOPS },
       { type: 'brand-grid', emoji: '👖', title: 'Raw Denim', sub: 'Japanese selvedge only · Budget €250–400 per pair · Free chain-stitch hemming at most stores', items: DENIM_BRANDS },
       { type: 'tips', title: 'Denim Tips', tips: DENIM_TIPS },
