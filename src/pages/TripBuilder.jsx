@@ -121,10 +121,10 @@ export default function TripBuilder() {
                 {DESTINATIONS.map(dest => (
                   <button
                     key={dest.id}
-                    onClick={() => { setCountry(dest.id); setCities([]) }}
+                    onClick={() => { setCountry(dest.id); setCities([]); setStep(2); window.scrollTo({ top: 0, behavior: 'instant' }) }}
                     style={{
-                      background: country === dest.id ? '#f5f5f5' : '#fff',
-                      border: country === dest.id ? '2px solid #1a1a1a' : '2px solid #e5e5e5',
+                      background: '#fff',
+                      border: '2px solid #e5e5e5',
                       borderRadius: 14, padding: 20, textAlign: 'left', cursor: 'pointer',
                       transition: 'all 0.15s',
                       boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
@@ -134,24 +134,8 @@ export default function TripBuilder() {
                     <div style={{ fontSize: 32, marginBottom: 8 }}>{dest.emoji}</div>
                     <div style={{ fontSize: 16, fontWeight: 700, color: '#1a1a1a', marginBottom: 4 }}>{dest.name}</div>
                     <div style={{ fontSize: 12, color: '#888', lineHeight: 1.5 }}>{dest.desc}</div>
-                    {country === dest.id && (
-                      <div style={{ marginTop: 10, fontSize: 11, fontWeight: 700, color: '#1a1a1a' }}>✓ Selected</div>
-                    )}
                   </button>
                 ))}
-              </div>
-
-              <div style={{ marginTop: 36, display: 'flex', justifyContent: 'flex-end' }}>
-                <button
-                  onClick={() => { setStep(2); window.scrollTo({ top: 0, behavior: 'instant' }) }}
-                  style={{
-                    padding: '12px 32px', background: '#1a1a1a', color: '#fff',
-                    border: 'none', borderRadius: 24, fontSize: 15, fontWeight: 700,
-                    cursor: 'pointer', fontFamily: 'inherit',
-                  }}
-                >
-                  Next: Choose cities →
-                </button>
               </div>
             </div>
           )}
